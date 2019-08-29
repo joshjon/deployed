@@ -4,6 +4,8 @@ Deployed is a social news and discussion website similar to Hacker News and Redd
 
 Built with Ruby on Rails and PostgreSQL
 
+Try out the Deployed website for yourself on [Heroku](https://deployed-tech-news.herokuapp.com).
+
 ### Author
 
 Joshua Jon<br>
