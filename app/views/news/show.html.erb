@@ -4,12 +4,9 @@
   <div class="newspost">
     <p class="subtitle">
       <%= link_to @news.title, (@news.url? ? @news.url : @news) %>
-
       <% if @news.url? %>
         <span class="metadata">
-          (
-          <%= link_to URI.parse(@news.url).host, @news.url %>
-          )
+          (<%= link_to URI.parse(@news.url).host, @news.url %>)
         </span>
       <% end %>
     </p>
