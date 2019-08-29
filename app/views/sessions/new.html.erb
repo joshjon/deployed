@@ -1,0 +1,24 @@
+<% provide(:title, "Log in") %>
+<section class="section-margins">
+  <div class="row">
+    <div class="col-md-4">
+      <h1 class="title">Welcome back!</h1>
+      <%= form_for(:session, url: login_path) do |f| %>
+        <div class="form-padding">
+          <%= f.label :username %>
+          <%= f.text_field :username, class: 'form-control' %>
+        </div>
+        <div class="form-padding">
+          <%= f.label :password %>
+          <%= f.password_field :password, class: 'form-control' %>
+        </div>
+        <div class="form-padding">
+          <%= f.button "Log In", class: "btn btn-primary button-wide" %>
+        </div>
+      <% end %>
+
+      <p class="comment">New user?
+      <%= link_to "Sign up now!", signup_path %></p>
+    </div>
+  </div>
+</section>

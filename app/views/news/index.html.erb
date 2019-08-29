@@ -1,0 +1,33 @@
+<% provide(:title, "Deployed | #{@page + 1}") %>
+<section class="section-margins">
+  <% @news.each do |news|  %>
+    <div class="all-news">
+      <p class="index"></p>
+      <span>
+        <p class="subtitle">
+          <%= link_to news.title, (news) %>
+          <% if news.url? %>
+            <span class="metadata">
+              (<%= link_to URI.parse(news.url).host, (news.url) %>)
+            </span>
+          <% end %>
+        </p>
+      </span>
+      <div class="metadata">
+        <span>
+          <p>
+            <%= news.by%>
+            <%= time_ago_in_words(news.created_at) %>
+            ago &nbsp·&nbsp
+            <span class="comment-count">
+              <%= link_to pluralize(news.comment_count, 'comment'), news_path(id: news.id) %>
+            </span>
+          </p>
+        </span>
+      </div>
+    </div>
+  <% end %>
+  <% if @news.present? %>
+    <%= link_to 'More', allnews_path(page: @pageNum), class: "btn btn-primary" %>
+  <% end %>
+</section>

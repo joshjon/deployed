@@ -1,0 +1,154 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+/* mixins, variables, etc. */
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+$gray-medium-light: #eaeaea;
+/* universal */
+body {
+  padding-top: 60px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: none;
+}
+
+.title {
+  color: $gray-dark;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  font-size: 1.4em;
+}
+
+.subtitle {
+  color: $gray-dark;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  font-size: 1.1em;
+}
+
+.title a {
+  color: black;
+  text-decoration: none;
+}
+
+.subtitle a {
+  color: black;
+  text-decoration: none;
+}
+
+.center {
+  text-align: center;
+}
+
+.section-margins {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+/* typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 2em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  font-weight: normal;
+  color: $gray-light;
+}
+
+p {
+  font-size: 1.1em;
+  margin-bottom: 6px;
+}
+
+.button-wide {
+  width: 130px;
+}
+
+.button-regular {
+  width: 90px;
+}
+
+.metadata {
+  color: $gray-light;
+  font-size: 0.80em;
+
+  a:link {
+    color: $gray-light;
+  }
+
+  a:visited {
+    color: $gray-light;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+}
+
+.comment-count a {
+  color: inherit;
+}
+
+.clean-hover a:hover {
+  text-decoration: none !important;
+}
+/* forms */
+.uneditable-input,
+input,
+select,
+textarea {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+  color: red;
+
+  ul {
+    color: red;
+    margin: 0 0 30px;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+/* miscellaneous */
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}

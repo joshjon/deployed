@@ -1,0 +1,47 @@
+orange:
+  type: News
+  by: josh
+  title: testing
+  created_at: <%= 10.minutes.ago %>
+
+tau_manifesto:
+  type: News
+  by: josh
+  title: testing
+  created_at: <%= 3.years.ago %>
+
+cat_video:
+  type: News
+  by: gerald
+  title: testing
+  created_at: <%= 2.hours.ago %>
+
+most_recent:
+  type: News
+  by: josh
+  title: testing recent
+  created_at: <%= Time.now %>
+
+orange_comment:
+  type: Comment
+  by: josh
+  title: testing
+  created_at: <%= 10.minutes.ago %>
+
+tau_manifesto_comment:
+  type: Comment
+  by: josh
+  title: testing
+  created_at: <%= 3.years.ago %>
+
+cat_video_comment:
+  type: Comment
+  by: gerald
+  title: testing
+  created_at: <%= 2.hours.ago %>
+
+most_recent_comment:
+  type: Comment
+  by: josh
+  title: testing recent
+  created_at: <%= Time.now %>

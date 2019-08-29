@@ -1,0 +1,65 @@
+<% provide(:title, "#{@news.title}") %>
+
+<section class="section-margins">
+  <div class="newspost">
+    <p class="subtitle">
+      <%= link_to @news.title, (@news.url? ? @news.url : @news) %>
+
+      <% if @news.url? %>
+        <span class="metadata">
+          (
+          <%= link_to URI.parse(@news.url).host, @news.url %>
+          )
+        </span>
+      <% end %>
+    </p>
+
+    <div class="metadata">
+      <span>
+        <p>
+          by
+          <%= @news.by %>
+          <%= time_ago_in_words(@news.created_at) %>
+          ago |
+          <%= @news.comment_count %>
+          comments
+        </p>
+      </span>
+    </div>
+
+    <% if logged_in? %>
+      <div class="add-comment row">
+        <div class="col-sm-6">
+          <%= form_for :comment, url: news_comments_path(@news) do |f| %>
+          <div class="form-group">
+            <%= f.text_area :text, class: "form-control", placeholder: "Comment here...", cols: 50, rows: 4, required: true %>
+          </div>
+
+          <div class="form-group">
+            <%= f.button "add comment", class: "btn btn-primary" %>
+          </div>
+        <% end %>
+        </div>
+      </div>
+    <% end %>
+
+    <div class="comments">
+      <h2 class="subtitle">Comments</h2>
+      <% @comments.each do |comment| %>
+        <div class="metadata">
+          <span>
+            <p>
+              <%= comment.by %>
+              &nbsp·&nbsp
+              <%= time_ago_in_words(comment.created_at) %>
+              ago
+            </p>
+          </span>
+        </div>
+        <p class="text">
+          <%= comment.text %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+</section>

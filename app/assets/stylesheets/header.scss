@@ -1,0 +1,40 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  width: 33px;
+  height: 40px;
+}
+
+#logoText {
+  float: left;
+  margin-right: 60px;
+  font-size: 1.2em;
+  color: #293d7c;
+  letter-spacing: 0.5px;
+  padding-top: 15px;
+  font-weight: bold;
+}
+
+.active a {
+  color: $gray-dark;
+  text-decoration: none;
+  border-bottom: 3px solid $gray;
+}
+
+.navbar {
+  background: $gray-lighter;
+  font-weight: 500;
+}
+
+#logoText a:hover {
+  text-decoration: none !important;
+}
+
+.navbar li a {
+  color: $gray-dark;
+}

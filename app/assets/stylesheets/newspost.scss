@@ -1,0 +1,21 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.newspost {
+
+  margin-top: 13px;
+  margin-bottom: 25px;
+
+  .title a{
+    color: black;
+    text-decoration: none;
+  }
+}
+
+.comments {
+  margin-top: 45px;
+}
+
+.text {
+  margin-bottom: 25px;
+}
