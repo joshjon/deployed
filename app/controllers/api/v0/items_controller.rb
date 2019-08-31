@@ -1,8 +1,8 @@
 class Api::V0::ItemsController < ActionController::API
-  NEWS_PER_PAGE = 10
+  NEWS_LIMIT = 25
 
   def index
-    @items = Item.all
+    @items = Item.all.order('created_at').limit(NEWS_LIMIT).reverse
   end
 
   def show
