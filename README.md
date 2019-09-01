@@ -48,10 +48,18 @@ title  | The title of the news
 - **Request Body:**
 ```
   {
-    "username" : "josh",
-    "text" : "Create a sample news",
     "type" : "news",
-    "new source" : "https://github.com/joshjon"
+    "source" : "https://github.com/joshjon",
+    "username" : "josh",
+    "text" : "Create a sample news"
+  }
+```
+```
+  {
+    "type" : "comment",
+    "news_id" : 1,
+    "username" : "ethan",
+    "text" : "Google is ramping up its efforts to make replace SMS with RCS"
   }
 ```
 - **Authentication:** None

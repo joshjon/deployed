@@ -2,7 +2,7 @@ class Api::V0::ItemsController < ActionController::API
   NEWS_LIMIT = 25
 
   def index
-    @items = Item.all.order('created_at').limit(NEWS_LIMIT).reverse
+    @items = Item.last(NEWS_LIMIT).reverse
   end
 
   def show
